@@ -1,0 +1,86 @@
+{
+  "features" : [
+    "refractivity"
+  ],
+  "fill-specializations" : [
+    {
+      "value" : {
+        "linear-gradient" : [
+          "display-p3:0.27000,0.23000,0.65000,1.00000",
+          "display-p3:0.07000,0.08000,0.22000,1.00000"
+        ]
+      }
+    },
+    {
+      "appearance" : "dark",
+      "value" : {
+        "linear-gradient" : [
+          "display-p3:0.17000,0.14000,0.42000,1.00000",
+          "display-p3:0.02500,0.03000,0.10000,1.00000"
+        ]
+      }
+    }
+  ],
+  "groups" : [
+    {
+      "blur-material" : 0.12,
+      "layers" : [
+        {
+          "fill-specializations" : [
+            {
+              "value" : {
+                "linear-gradient" : [
+                  "display-p3:1.00000,1.00000,1.00000,1.00000",
+                  "display-p3:0.72000,0.76000,1.00000,1.00000"
+                ]
+              }
+            },
+            {
+              "appearance" : "dark",
+              "value" : "system-light"
+            }
+          ],
+          "glass" : true,
+          "image-name" : "moon.svg",
+          "name" : "Moon"
+        },
+        {
+          "fill" : {
+            "solid" : "display-p3:0.84000,0.88000,1.00000,1.00000"
+          },
+          "glass" : true,
+          "image-name" : "stars.svg",
+          "name" : "Stars"
+        }
+      ],
+      "lighting" : "combined",
+      "name" : "Kimi Moon",
+      "position" : {
+        "scale" : 0.88,
+        "translation-in-points" : [
+          0,
+          0
+        ]
+      },
+      "refractivity" : {
+        "depth" : 0.06,
+        "enabled" : true,
+        "strength" : -0.5
+      },
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.65
+      },
+      "specular" : true,
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.35
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "squares" : [
+      "macOS"
+    ]
+  }
+}
