@@ -20,6 +20,11 @@ cp build/icon/AppIcon.icns build/icon/Assets.car "$APP_PATH/Contents/Resources/"
 cp "$BIN_DIR/KimiUsageBar" "$APP_PATH/Contents/MacOS/KimiUsageBar"
 printf 'APPL????' > "$APP_PATH/Contents/PkgInfo"
 chmod 755 "$APP_PATH/Contents/MacOS/KimiUsageBar"
-codesign --force --sign - "$APP_PATH"
+SIGN_IDENTITY="${CODESIGN_IDENTITY:--}"
+if [ "$SIGN_IDENTITY" = "-" ]; then
+    codesign --force --sign - "$APP_PATH"
+else
+    codesign --force --options runtime --timestamp --sign "$SIGN_IDENTITY" "$APP_PATH"
+fi
 
 echo "Built $APP_PATH"
